@@ -11,11 +11,26 @@
     <div class="container">
       <form name="game">
         <input type="text" id="trick"></input> 
+        <p id="result"></p>
        <!--<input id="letter">Letter: </input>-->
-          <button type="button" onclick="myLetter('b');">Guess</button>
+          <button type="button" onclick="myLetter();">Guess</button>
       </form>
+      
     </div>
     <script>
+     var trick = document.getElementById("trick");
+     var secret = "b";
+     var result = document.getElementById("result");
+     
+    function myLetter(){
+        if(trick.value == secret){
+         // console.log("Cool");
+          result.innerHTML="Cool!";
+        } else{
+           //console.log("Not Cool!");
+           result.innerHTML="Not Cool!";
+        }
+    }
      
         
    </script>
