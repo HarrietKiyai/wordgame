@@ -1,3 +1,7 @@
-.game {
-  display: inline;
+body {
+  background-color: #f7e7d4;
+}
+
+div {
+  background-color: #663399;
 }

@@ -4,22 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Letter Game</title>
+    <title>Word Game</title>
   </head>
   <body>
     <div class="container">
-      <form name="game">
-        <input type="text" id="trick"></input> 
-        <p id="result"></p>
-       <!--<input id="letter">Letter: </input>-->
-          <button type="button" onclick="myLetter();">Guess</button>
+      <form name="game" autocomplete="off">
+        <div class="jumbotron text-center"><p class="display 3"><h1>It's a four letter word!</h1></div>
+        <div class="jumbotron text-center"><input type="text" id="trick"></input></div>
+        <div class="alert alert-success" ><p id="result"></p></div>
+        <div class="jumbotron text-center"><button class="btn btn-primary" type="button" onclick="myLetter();">Guess</button></div>
       </form>
-      
     </div>
+
     <script>
      var trick = document.getElementById("trick");
-     var secret = "b";
+     var secret = "code";
      var result = document.getElementById("result");
      
     function myLetter(){
@@ -31,8 +35,7 @@
            result.innerHTML="Not Cool!";
         }
     }
-     
-        
+
    </script>
 
   </body>
