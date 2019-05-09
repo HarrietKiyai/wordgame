@@ -14,10 +14,12 @@
   <body>
     <div class="container">
       <form name="game" autocomplete="off">
-        <div class="jumbotron text-center"><p class="display 3"><h1>It's a four letter word!</h1></div>
-        <div class="jumbotron text-center"><input type="text" id="trick"></input></div>
+        <div class="jumbotron text-center"><p class="display 3"><h4>It's a four letter word!</h4></div>
+          <div class="jumbotron text-center" id="chances"> Your Chances:5</div>
+        <div class="jumbotron text-center"><input type="text" id="trick"></input>
+          <button class="btn btn-primary" type="button" onclick="myLetter();">Guess</button>
+        </div>
         <div class="alert alert-success" ><p id="result"></p></div>
-        <div class="jumbotron text-center"><button class="btn btn-primary" type="button" onclick="myLetter();">Guess</button></div>
       </form>
     </div>
 
@@ -25,17 +27,27 @@
      var trick = document.getElementById("trick");
      var secret = "code";
      var result = document.getElementById("result");
-     
+     var chance = 5;
+     var chanceResult = document.getElementById("chances");
+          
     function myLetter(){
         if(trick.value == secret){
-         // console.log("Cool");
-          result.innerHTML="Cool!";
+         chanceResult.innerHTML = chance; 
+          result.innerHTML="Cool! &#128578" 
         } else{
-           //console.log("Not Cool!");
-           result.innerHTML="Not Cool!";
+          console.log(chanceResult);
+          chance = chance -1;
+          var tryAgain = "Your chances\:"+ chance;
+          chanceResult.innerHTML = chance;
+           result.innerHTML="Not Cool! &#128545 "
+          console.log(chance);
         }
     }
 
+    $("form").submit(function(e){
+      myLetter();
+      return false;
+    });
    </script>
 
   </body>
